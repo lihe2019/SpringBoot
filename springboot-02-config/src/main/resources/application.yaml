@@ -1,0 +1,49 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8082
+spring:
+  profiles: dev
+
+---
+server:
+  port: 8083
+spring:
+  profiles: test
+
+# 配置文件到底能写什么？ ---联系---和 spring
+
+# 在我们这个配置文件中，能配置的东西都存在一个规律：xxxx.properties文件中
+#  xxxxAutoConfiguration：默认值  XXXXProperties和配置文件绑定，我们就可以使用自定义的配置了！
+
+
+
+
+
+
+
+
+person:
+  name: lihe${random.int}
+  age: 18
+  happy: false
+  birth: 2019/11/02
+  maps: {k1: v1,k2: v2}
+  list:
+    - code
+    - music
+    - girl
+  dog:
+    name: ${person.hello:hello}_wangcai
+    age: 3
+# 从new 到注解，到这样的配置文件
+
+
+dog:
+  first-name: 阿黄
+  age: 5
